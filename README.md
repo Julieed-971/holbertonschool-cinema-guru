@@ -113,6 +113,7 @@ In this task we will add various general components that we will be using almost
 
 <img src="./README_screenshots/task_2_screenshot1.gif">
 
+
 <img src="./README_screenshots/task_2_screenshot2.gif">
 
 
