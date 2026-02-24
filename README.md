@@ -150,7 +150,7 @@ Create `src/components/general/SelectInput.jsx`:
   - Inside the `select` tag, map each option from the `options` prop to return an `option` tag with the appropriate attributes and text inside.
 - Create `handleSelect` function that takes the `onChange` event as parameter and sets the value to the event target value using the `setValue` prop and pass it to the `select` `onChange` event.
 
-Button
+**Button**
 
 <img src="./README_screenshots/task_2_screenshot4.gif">
 
@@ -167,7 +167,7 @@ Create `src/components/general/Button.jsx`:
   - Inside the `button` tag, there should be a `FontAwesomeIcon` if provided and the button text.
 - Bind the button `onClick` event with the `onClick` function passed from the props.
 
-SearchBar
+**SearchBar**
 
 <img src="./README_screenshots/task_2_screenshot5.gif">
 
@@ -175,7 +175,7 @@ Create `src/components/general/SearchBar.jsx`:
 
 - The file should import `general.css`
 - The file should export a functional component named `SearchBar` as default:
-  - `Button` must accept these props:
+  - `SearchBar` must accept these props:
     - `title`: `String` -- The controlled state
     - `setTitle`: `String` -- The setState function of the above state.
 - `SearchBar`'s return value must contain a html `input` with the appropriate attributes from the props.
