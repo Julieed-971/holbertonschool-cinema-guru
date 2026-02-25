@@ -9,9 +9,6 @@ export default function Button(
         icon
     }
 ) {
-    const handleSelect = (event) => {
-        setValue(event.target.value)
-    }
     return (
         <>
             <button className={`button ${className || ''}`} onClick={onClick}>
