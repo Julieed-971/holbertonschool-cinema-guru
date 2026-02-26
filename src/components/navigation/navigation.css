@@ -39,3 +39,42 @@
     color: #BB000E;
     cursor: pointer;
 }
+
+.sidebar-container {
+    background-color: #BB000E;
+    width: 218px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.sidebar-container.small {
+    width: 50px;
+}
+
+.sidebar-container .navigation-list {
+    margin-top: 15px;
+}
+.sidebar-container .navigation-list li {
+    height: 48px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar-container .navigation-list li:hover {
+    background-color: #E31C25;
+}
+
+.sidebar-container .navigation-list li .arrow-icon {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-container .navigation-list li:hover .arrow-icon {
+    opacity: 1;
+}
