@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 61px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: #161616;
+}
+
+.navbar .header-title {
+    font-size: 15px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.navbar .header-menu {
+    display: flex;
+    flex-direction: row;
+    width: 18%;
+    height: 100%;
+    margin: 0 15px;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.navbar .header-menu img {
+    border-radius: 50%;
+    border: solid 3px #BB000E;
+    height: 41px;
+    width: 43px;
+}
+
+.navbar span {
+    color: #BB000E;
+    cursor: pointer;
+}
