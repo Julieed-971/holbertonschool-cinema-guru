@@ -76,7 +76,7 @@ export default function MovieCard({ movie }) {
                 }
             }
         }
-                if (type === "watchlater") {
+        if (type === "watchlater") {
             if (!isWatchLater) {
                 try {
                     const request = await axios.post(`/api/titles/watchlater/${movie.imdbId}`, {}, {
@@ -123,9 +123,9 @@ export default function MovieCard({ movie }) {
             </div>
             <h1>{movie.title}</h1>
             <p>{movie.synopsis}</p>
-            {movie.genres.map((genre) => (
+            {movie.genres.map((genre) => {
                 <p key={genre}>{genre}</p>
-            ))}
+            })}
         </li>
     )
 }

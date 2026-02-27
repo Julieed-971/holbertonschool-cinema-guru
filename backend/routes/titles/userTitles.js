@@ -11,7 +11,7 @@ router.get('/favorite/', verifyToken, (req, res) => {
     }).catch(err => res.status(500).send(err))
 })
 
-router.get('/watchLater/', verifyToken, (req, res) => {
+router.get('/watchlater/', verifyToken, (req, res) => {
     User.findOne({ where: { id: req.userId }, include: { model: Title, as: "watchLater" } }).then(user => {
         res.send(user.watchLater)
     }).catch(err => res.status(500).send(err))

@@ -11,6 +11,7 @@ export default function SideBar() {
     const [small, setSmall] = useState(true)
     const [activities, setActivities] = useState([])
     const [showActivities, setShowActivities] = useState(false)
+    const accessToken = localStorage.getItem("accessToken")
 
     const navigate = useNavigate();
 
@@ -29,7 +30,11 @@ export default function SideBar() {
     useEffect(() => {
         const fetchActivities = async () => {
             try {
-                const response = await axios.get('/api/activity')
+                const response = await axios.get('/api/activity', {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                })
                 if (response.status === 200) {
                     setActivities(response.data)
                 }

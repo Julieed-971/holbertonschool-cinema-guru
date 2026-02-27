@@ -6,12 +6,13 @@ export default function Button(
         label,
         className,
         onClick,
-        icon
+        icon,
+        type = "button"
     }
 ) {
     return (
         <>
-            <button className={`button ${className || ''}`} onClick={onClick}>
+            <button type={type} className={`button ${className || ''}`} onClick={onClick}>
                 {icon && <FontAwesomeIcon icon={icon} />}
                 {label}
             </button>
