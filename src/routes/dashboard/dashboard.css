@@ -7,7 +7,23 @@ body {
     height: 100%;
     display: flex;
     position: absolute;
+    flex-direction: row;
     flex-wrap: wrap;
     top: 0;
     left: 0;
+}
+
+.movies-container {
+    display: flex;
+}
+
+.homepage-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filters-tags-container {
+    width: 100%;
 }

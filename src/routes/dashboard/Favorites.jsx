@@ -28,9 +28,9 @@ export default function Favorites() {
     return (
         <div className="favorite-container">
             <h1>Movies you like</h1>
-            {movies.map((movie) => {
-                <MovieCard movie={movie} />
-            })}
+            {movies.map((movie) => (
+                <MovieCard key={movie.imdbId} movie={movie} />
+            ))}
         </div>
     )
 }

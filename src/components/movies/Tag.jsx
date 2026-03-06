@@ -22,7 +22,7 @@ export default function Tag(
     }
 
     return (
-        <li onClick={handleTag}
+        <li onClick={filter ? handleTag : undefined}
             className={`tag ${selected ? 'selected' : ''}`}
         >
             {genre}

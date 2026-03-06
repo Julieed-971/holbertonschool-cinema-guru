@@ -17,13 +17,15 @@ export default function Dashboard(
             <BrowserRouter>
                 <div className="dashboard-container">
                     <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-                    <SideBar />
-                    <Routes>
-                        <Route path="/home" element={<HomePage />} />
-                        <Route path="/favorites" element={<Favorites />} />
-                        <Route path="/watchlater" element={<WatchLater />} />
-                        <Route path="*" element={<Navigate to="/home" />} />
-                    </Routes>
+                    <div className="movies-container">
+                        <SideBar />
+                        <Routes>
+                            <Route path="/home" element={<HomePage />} />
+                            <Route path="/favorites" element={<Favorites />} />
+                            <Route path="/watchlater" element={<WatchLater />} />
+                            <Route path="*" element={<Navigate to="/home" />} />
+                        </Routes>
+                    </div>
                 </div>
             </BrowserRouter>
         </>

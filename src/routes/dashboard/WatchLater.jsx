@@ -28,9 +28,9 @@ export default function WatchLater() {
     return (
         <div className="watchlater-container">
             <h1>Watch later movie list</h1>
-            {movies.map(() => {
-                <MovieCard movie={movie} />
-            })}
+            {movies.map((movie) => (
+                <MovieCard key={movie.imdbId} movie={movie} />
+            ))}
         </div>
     )
 }

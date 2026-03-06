@@ -45,21 +45,25 @@ export default function HomePage() {
 
     return (
         <div className="homepage-container">
-            <Filter
-                minYear={minYear}
-                setMinYear={setMinYear}
-                maxYear={maxYear}
-                setMaxYear={setMaxYear}
-                sort={sort}
-                setSort={setSort}
-                genres={genres}
-                setGenres={setGenres}
-                title={title}
-                setTitle={setTitle}
-            />
-            {movies.map((movie) => (
-                <MovieCard key={movie.imdbId} movie={movie} />
-            ))}
+            <div className="filters-tags-container">
+                <Filter
+                    minYear={minYear}
+                    setMinYear={setMinYear}
+                    maxYear={maxYear}
+                    setMaxYear={setMaxYear}
+                    sort={sort}
+                    setSort={setSort}
+                    genres={genres}
+                    setGenres={setGenres}
+                    title={title}
+                    setTitle={setTitle}
+                />
+            </div>
+            <div className="movies-cards-container">
+                {movies.map((movie) => (
+                    <MovieCard key={movie.imdbId} movie={movie} />
+                ))}
+            </div>
             <Button
                 label={"Load More..."}
                 className={"loadmore"}
