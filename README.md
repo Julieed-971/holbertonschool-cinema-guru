@@ -42,6 +42,14 @@ Notes
     - "react-router-dom": "^7.6.2"
     - "react-scripts": "5.0.1"
 
+## Final rendering
+
+<video controls width="500">
+
+<source src="./README_screenshots/Screencast from 2026-03-07 17-39-32.webm" type="video/webm" />
+
+</video>
+
 ## Mandatory Tasks
 
 <details close><summary>
