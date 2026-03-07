@@ -42,13 +42,15 @@ body {
 }
 
 .movies-cards-container {
+    background-color: #222222;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
 
-.movies-cards-container .loadmore-button {
+.loadmore-button {
+    background-color: #222222;
     width: 100%;
     text-align: center;
     margin: 20px 0;
