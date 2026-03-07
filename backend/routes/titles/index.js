@@ -52,8 +52,10 @@ const getSort = (param) => {
         case "oldest":
             return ['released', 'ASC']
         case "highestrated":
+        case "highest rated":
             return ['imdbrating', 'DESC']
         case "lowestrated":
+        case "lowest rated":
             return ['imdbrating', 'ASC']
         default:
             return ['released', 'DESC']

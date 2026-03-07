@@ -44,11 +44,7 @@ Notes
 
 ## Final rendering
 
-<video controls width="500">
-
-<source src="./README_screenshots/Screencast from 2026-03-07 17-39-32.webm" type="video/webm" />
-
-</video>
+<img src="./README_screenshots/Screencast from 2026-03-07 18-08-04.gif">
 
 ## Mandatory Tasks
 
