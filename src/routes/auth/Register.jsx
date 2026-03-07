@@ -38,7 +38,6 @@ export default function Register(
                     label="Sign Up"
                     type="submit"
                     className="register-button"
-                    // onClick={onSubmit}
                     icon={faPlus}
                 />
             </div>

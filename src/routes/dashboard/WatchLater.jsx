@@ -19,7 +19,7 @@ export default function WatchLater() {
                     setMovies(response.data)
                 }
             } catch (error) {
-                console.error('Error while fetching user\'s watchlater movies')
+                console.error('Error while fetching user\'s watchlater movies', error)
             }
         }
         fetchWatchLater()

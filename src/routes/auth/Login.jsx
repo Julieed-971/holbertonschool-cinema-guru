@@ -38,7 +38,6 @@ export default function Login(
                     label="Sign In"
                     type="submit"
                     className="login-button"
-                    // onClick={onSubmit}
                     icon={faKey}
                 />
             </div>

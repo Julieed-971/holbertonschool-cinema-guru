@@ -19,15 +19,18 @@ export default function Filter(
     }
 ) {
     const genreList = [
+        'animation',
+        'adventure',
         'action',
         'drama',
         'comedy',
         'biography',
+        'family',
         'romance',
         'thriller',
+        'mystery',
         'war',
         'history',
-        'sport',
         'sci-fi',
         'documentary',
         'crime',
@@ -65,8 +68,8 @@ export default function Filter(
             </div>
             <div className="tags-filters">
                 <ul>
-                    {genreList.map((genre) => (
-                        <Tag key={genre} genre={genre} genres={genres} setGenres={setGenres} filter={true} />
+                    {genreList.map((genre, index) => (
+                        <Tag key={index} genre={genre} genres={genres} setGenres={setGenres} filter={true} />
                     ))}
                 </ul>
             </div>

@@ -5,9 +5,6 @@ import Authentication from './routes/auth/Authentication'
 import Dashboard from './routes/dashboard/Dashboard'
 
 export default function App() {
-  const [text, setText] = useState('')
-  const [search, setSearch] = useState('')
-  const [sort, setSort] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userUsername, setUserUsername] = useState('')
 
