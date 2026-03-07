@@ -27,10 +27,12 @@ export default function WatchLater() {
 
     return (
         <div className="watchlater-container">
-            <h1>Watch later movie list</h1>
-            {movies.map((movie) => (
-                <MovieCard key={movie.imdbId} movie={movie} />
-            ))}
+            <h1 className="watchlater-page-title">Movies to watch later</h1>
+            <div className="movies-cards-container">
+                {movies.map((movie, index) => (
+                    <MovieCard key={index} movie={movie} />
+                ))}
+            </div>
         </div>
     )
 }

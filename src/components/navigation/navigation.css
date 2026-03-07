@@ -42,7 +42,7 @@
 
 .sidebar-container {
     background-color: #BB000E;
-    width: 218px;
+    width: fit-content;
     height: 100%;
     top: 0;
     left: 0;
@@ -51,6 +51,7 @@
 
 .sidebar-container.small {
     width: 50px;
+    height: 100%;
 }
 
 .sidebar-container .navigation-list {
@@ -78,3 +79,22 @@
 .sidebar-container .navigation-list li:hover .arrow-icon {
     opacity: 1;
 }
+
+.latest-activity-container {
+    background-color: #2C2C2C;
+    width: 208px;
+    height: fit-content;
+    overflow: auto;
+    scroll-behavior: smooth;
+    margin: 15px 10px;
+    font-size: 12px;
+    text-align: left;
+    padding: 7px;
+}
+
+.activity-title {
+    margin: 0 2px;
+    font-size: 24px;
+    border-bottom: 2px solid #FFFFFF;
+}
+

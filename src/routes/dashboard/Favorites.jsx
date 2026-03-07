@@ -19,7 +19,7 @@ export default function Favorites() {
                     setMovies(response.data)
                 }
             } catch (error) {
-                console.error('Error while fetching user\'s favorite movies')
+                console.error('Error while fetching user\'s favorite movies', error)
             }
         }
         fetchFavorite()
@@ -27,10 +27,12 @@ export default function Favorites() {
 
     return (
         <div className="favorite-container">
-            <h1>Movies you like</h1>
-            {movies.map((movie) => (
-                <MovieCard key={movie.imdbId} movie={movie} />
-            ))}
+            <h1 className="favorite-page-title">Movies you like</h1>
+            <div className="movies-cards-container">
+                {movies.map((movie, index) => (
+                    <MovieCard key={index} movie={movie} />
+                ))}
+            </div>
         </div>
     )
 }

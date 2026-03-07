@@ -16,16 +16,10 @@ export default function SideBar() {
     const navigate = useNavigate();
 
     const setPage = (pageName) => {
-        setSelected(pageName)
-        if (pageName === "Home") {
-            navigate('/home')
+        if (selected != pageName) {
+            setSelected(pageName)
         }
-        if (pageName === "Favorites") {
-            navigate('/favorites')
-        }
-        if (pageName === "Watch Later") {
-            navigate('/watchlater')
-        }
+        navigate(`/${pageName}`)
     }
     useEffect(() => {
         const fetchActivities = async () => {
@@ -37,6 +31,9 @@ export default function SideBar() {
                 })
                 if (response.status === 200) {
                     setActivities(response.data)
+                    if (response.data.length > 0) {
+                        setShowActivities(true)
+                    }
                 }
             } catch (error) {
                 console.error('Error during activites fetching', error)
@@ -52,28 +49,33 @@ export default function SideBar() {
                 onMouseLeave={() => setSmall(true)}
             >
                 <ul className='navigation-list'>
-                    <li onClick={() => setPage("Home")}>
+                    <li onClick={() => setPage("home")}>
                         <FontAwesomeIcon icon={faFolder} />
                         {!small && "Home"}
                         {!small && <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />}
                     </li>
-                    <li onClick={(e) => { e.stopPropagation(); setPage("Favorites") }}>
+                    <li onClick={() => setPage("favorites")}>
                         <FontAwesomeIcon icon={faStar} />
                         {!small && "Favorites"}
                         {!small && <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />}
                     </li>
-                    <li onClick={(e) => { e.stopPropagation(); setPage("Watch Later") }}>
+                    <li onClick={() => setPage("watchlater")}>
                         <FontAwesomeIcon icon={faClock} />
                         {!small && "Watch Later"}
                         {!small && <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />}
                     </li>
                 </ul>
-                {!small && (
-                    <ul className="activity-list">
-                        {activities.slice(0, 10).map((activity) => {
-                            return <Activity key={activity.id} activity={activity} />
-                        })}
-                    </ul>
+                {!small && showActivities && (
+                    <>
+                        <div className="latest-activity-container">
+                            <h2 className='activity-title'>Latest Activities</h2>
+                            <ul className="activity-list">
+                                {activities.slice(0, 10).map((activity) => {
+                                    return <Activity key={activity.id} activity={activity} />
+                                })}
+                            </ul>
+                        </div>
+                    </>
                 )}
             </div>
         </>

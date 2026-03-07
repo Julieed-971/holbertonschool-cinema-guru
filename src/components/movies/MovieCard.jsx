@@ -134,7 +134,7 @@ export default function MovieCard({ movie }) {
     };
 
     return (
-        <li>
+        <li className="movie-card">
             <div className="movie-card-image-container">
                 <img src={movie.imageurls[0]} alt={movie.title} />
                 <div className="favorite-watchlater-icons">
@@ -156,14 +156,16 @@ export default function MovieCard({ movie }) {
                         )}
                     </div>
                 </div>
-                <h2 className="movie-card-title">{movie.title}</h2>
+                <h2 className="movie-card-title"><span>{movie.title}</span></h2>
             </div>
-            <p>{movie.synopsis}</p>
-            <div className="movie-card-genres">
+            <div className="movie-card-synopsis">
+                <p>{movie.synopsis}</p>
+            </div>
+            <ul className="movie-card-genres">
                 {movie.genres.map((genre) => (
-                    <p key={genre}>{genre}</p>
+                    <li key={genre}>{genre}</li>
                 ))}
-            </div>
+            </ul>
         </li>
     );
 }

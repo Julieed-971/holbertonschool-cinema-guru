@@ -13,6 +13,7 @@ export default function HomePage() {
     const [sort, setSort] = useState("")
     const [title, setTitle] = useState("")
     const [page, setPage] = useState(1)
+    const [hasMore, setHasMore] = useState(false)
     const accessToken = localStorage.getItem('accessToken')
 
     const loadMovies = async (pageNum) => {
@@ -31,6 +32,7 @@ export default function HomePage() {
                 }
             })
             if (response.status === 200) {
+                setHasMore(response.data.titles.length === 10)
                 setMovies((prev) => pageNum === 1 ? response.data.titles : [...prev, ...response.data.titles])
             }
         } catch (error) {
@@ -60,19 +62,24 @@ export default function HomePage() {
                 />
             </div>
             <div className="movies-cards-container">
-                {movies.map((movie) => (
-                    <MovieCard key={movie.imdbId} movie={movie} />
+                {movies.map((movie, index) => (
+                    <MovieCard key={index} movie={movie} />
                 ))}
+                {hasMore && (
+                    <div className="loadmore-button">
+                        <Button
+                            label={"Load More..."}
+                            className={"loadmore"}
+                            onClick={() => {
+                                const nextPage = page + 1
+                                setPage(nextPage)
+                                loadMovies(nextPage)
+                            }}
+                        />
+                    </div>
+                )}
             </div>
-            <Button
-                label={"Load More..."}
-                className={"loadmore"}
-                onClick={() => {
-                    const nextPage = page + 1
-                    setPage(nextPage)
-                    loadMovies(nextPage)
-                }}
-            />
+
         </div>
     )
 }

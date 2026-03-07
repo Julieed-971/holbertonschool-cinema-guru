@@ -64,27 +64,41 @@
 /* Movie cards */
 
 .movies-cards-container {
-    background-color: cornflowerblue;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    scroll-behavior: smooth;
+    overflow: auto;
+}
+
+.movie-card {
+    box-shadow: 12px 10px 13px 0px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 12px 10px 13px 0px rgba(255, 255, 255, 0.05);
 }
 
 .movies-cards-container li {
+    background-color: #2C2C2C;
     margin: 15px;
-    background-color: blueviolet;
     list-style: none;
     width: 300px;
+    height: fit-content;
 }
 
 .movie-card-image-container {
     position: relative;
     width: 100%;
-    border: solid 5px brown;
+    height: 300px;
+    background-color: #E31C25
 }
 
 .movie-card-image-container img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -92,11 +106,58 @@
 .favorite-watchlater-icons {
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 0px;
     display: flex;
     gap: 8px;
     color: white;
     font-size: 18px;
     cursor: pointer;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+    width: 80px;
+    justify-content: flex-end;
+    padding: 0 8px;
 }
 
+.movie-card-title {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.movie-card-title span {
+    margin-left: 8px;
+}
+
+.movie-card-synopsis {
+    text-align: justify;
+    font-size: 12px;
+    padding: 0 15px;
+}
+
+.movie-card-genres {
+    width: 100%;
+    height: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.movie-card-genres li {
+    background-color: #E31C25;
+    width: fit-content;
+    font-size: 16px;
+    height: 30px;
+    padding: 3px 8px;
+    margin: 5px 10px;
+    border: solid 1px #E31C25;
+    border-radius: 15px;
+}
